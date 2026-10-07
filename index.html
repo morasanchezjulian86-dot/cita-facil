@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitaFácil - Sistema de Citas</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📅 CitaFácil</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#registro">Registro</a>
+            <a href="#agendar">Agendar cita</a>
+            <a href="#mis-citas">Mis citas</a>
+        </nav>
+    </header>
+
+    <!-- INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="hero">
+            <span class="badge">🩺 Atención médica en línea</span>
+            <h2>Sistema de Citas Médicas</h2>
+            <p>Agenda tus citas de manera rápida, sencilla y organizada.</p>
+            <a href="#agendar" class="boton">Agendar una cita →</a>
+        </div>
+    </section>
+
+    <!-- REGISTRO -->
+    <section id="registro" class="seccion">
+        <div class="tarjeta">
+            <h2>Crear una cuenta</h2>
+            <form id="registroForm">
+                <label>Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Escribe tu nombre" required>
+
+                <label>Correo electrónico</label>
+                <input type="email" id="correo" placeholder="ejemplo@gmail.com" required>
+
+                <label>Teléfono</label>
+                <input type="tel" id="telefono" placeholder="10 dígitos" required>
+
+                <label>Contraseña</label>
+                <input type="password" id="password" placeholder="Crea una contraseña" required>
+
+                <button type="submit">Registrarme</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- AGENDAR CITA -->
+    <section id="agendar" class="seccion">
+        <div class="tarjeta">
+            <h2>📅 Agendar una cita</h2>
+            <form id="citaForm">
+                <label>Nombre del paciente</label>
+                <input type="text" id="paciente" placeholder="Nombre completo" required>
+
+                <label>Especialidad</label>
+                <select id="especialidad" required>
+                    <option value="">Selecciona una especialidad</option>
+                    <option value="Medicina General">🩺 Medicina General</option>
+                    <option value="Pediatría">🧒 Pediatría</option>
+                    <option value="Odontología">🦷 Odontología</option>
+                    <option value="Dermatología">✨ Dermatología</option>
+                    <option value="Nutrición">🥗 Nutrición</option>
+                </select>
+
+                <label>Doctor</label>
+                <select id="doctor" required disabled>
+                    <option value="">Primero elige especialidad</option>
+                </select>
+
+                <label>Fecha (Lunes a Viernes)</label>
+                <input type="date" id="fecha" required>
+
+                <label>Hora (9:00 am - 8:00 pm)</label>
+                <select id="hora" required disabled>
+                    <option value="">Primero elige la fecha</option>
+                </select>
+
+                <label>Motivo de la consulta</label>
+                <textarea id="motivo" placeholder="Escribe el motivo de la cita" required></textarea>
+
+                <button type="submit">✅ Confirmar cita</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- MIS CITAS -->
+    <section id="mis-citas" class="seccion">
+        <div class="tarjeta grande">
+            <h2>📋 Mis citas</h2>
+            <div id="listaCitas">
+                <p class="vacio">No tienes citas registradas.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>©️ 2026 CitaFácil | Sistema de Citas Médicas</p>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
