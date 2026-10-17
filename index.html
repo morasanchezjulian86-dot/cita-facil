@@ -13,25 +13,28 @@
     <header>
         <h1>📅 CitaFácil</h1>
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#registro">Registro</a>
-            <a href="#agendar">Agendar cita</a>
-            <a href="#mis-citas">Mis citas</a>
+            <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+            <a href="#" onclick="mostrarSeccion('registro')">Registro</a>
+            <a href="#" onclick="mostrarSeccion('agendar')">Agendar cita</a>
+            <a href="#" onclick="mostrarSeccion('mis-citas')">Mis citas</a>
+            <a href="#" onclick="mostrarSeccion('conocenos')">Conócenos</a>
+            <a href="#" onclick="mostrarSeccion('presentar-equipo')">Presentar equipo</a>
+            <a href="#" onclick="mostrarSeccion('bitacora')">Bitácora</a>
         </nav>
     </header>
 
     <!-- INICIO -->
-    <section id="inicio" class="inicio">
+    <section class="inicio oculta"id="inicio";">
         <div class="hero">
             <span class="badge">🩺 Atención médica en línea</span>
             <h2>Sistema de Citas Médicas</h2>
             <p>Agenda tus citas de manera rápida, sencilla y organizada.</p>
-            <a href="#agendar" class="boton">Agendar una cita →</a>
+            <a href="#" onclick="mostrarSeccion('agendar')">Agendar cita</a>
         </div>
     </section>
 
     <!-- REGISTRO -->
-    <section id="registro" class="seccion">
+    <section class="seccion oculta" id="registro" style="display: none;">
         <div class="tarjeta">
             <h2>Crear una cuenta</h2>
             <form id="registroForm">
@@ -53,7 +56,7 @@
     </section>
 
     <!-- AGENDAR CITA -->
-    <section id="agendar" class="seccion">
+    <section  class="seccion oculta" id="agendar" style="display: none;">
         <div class="tarjeta">
             <h2>📅 Agendar una cita</h2>
             <form id="citaForm">
@@ -92,7 +95,7 @@
     </section>
 
     <!-- MIS CITAS -->
-    <section id="mis-citas" class="seccion">
+    <section  class="seccion oculta"id="mis-citas" style="display: none;">
         <div class="tarjeta grande">
             <h2>📋 Mis citas</h2>
             <div id="listaCitas">
@@ -100,6 +103,62 @@
             </div>
         </div>
     </section>
+    <!-- ===== CONÓCENOS ===== -->
+<section class="equipo oculta" id="conocenos" style="display: none;">
+  <h2>Conócenos</h2>
+  <p>Somos un equipo de estudiantes del <strong>CECyTE Ixtlahuacán del Río</strong>.</p>
+  <p>Desarrollamos <strong>CitaFácil</strong>, un sistema de citas médicas, con el fin de facilitar el agendamiento de consultas de forma rápida y ordenada, y de aprender a crear y publicar aplicaciones web.</p>
+</section>
+
+<!-- ===== PRESENTAR EQUIPO ===== -->
+<section class="equipo oculta" id="presentar-equipo" style="display: none;">
+  <h2>Presentar equipo</h2>
+  <div class="equipo-grid">
+    <div class="tarjeta-equipo">
+      <h3>Julián Mora</h3>
+      <p>Desarrollador</p>
+    </div>
+    <div class="tarjeta-equipo">
+      <h3>Alexa Sánchez</h3>
+      <p>Tester</p>
+    </div>
+    <div class="tarjeta-equipo">
+      <h3>Sonia Valadez</h3>
+      <p>Responsable de configuración</p>
+    </div>
+    <div class="tarjeta-equipo">
+      <h3>Ángel Gámez</h3>
+      <p>Documentador</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BITÁCORA DE CONTROL DE VERSIONES ===== -->
+<section class="bitacora oculta" id="bitacora" style="display: none;">
+  <h2>Bitácora de control de versiones</h2>
+  <table>
+    <tr>
+      <th>Fecha</th>
+      <th>Descripción</th>
+    </tr>
+    <tr>
+      <td>20/08/2026</td>
+      <td>Inicio del proyecto</td>
+    </tr>
+    <tr>
+      <td>06/10/2026</td>
+      <td>Subo los archivos del proyecto (index.html, estilos.css, script.js)</td>
+    </tr>
+    <tr>
+      <td>06/10/2026</td>
+      <td>Activación de GitHub Pages y publicación del sitio</td>
+    </tr>
+    <tr>
+      <td>15/10/2026</td>
+      <td>Agregamos las secciones "Conócenos", "Presentar equipo" y "Bitácora"</td>
+    </tr>
+  </table>
+</section>
 
     <footer>
         <p>©️ 2026 CitaFácil | Sistema de Citas Médicas</p>
@@ -107,7 +166,17 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
-
+<script>
+  function mostrarSeccion(id) {
+    var secciones = document.querySelectorAll('.oculta');
+    for (var i = 0; i < secciones.length; i++) {
+      secciones[i].style.display = 'none';
+    }
+    var seccion = document.getElementById(id);
+    seccion.style.display = 'flex';
+    window.scrollTo(0, 0);
+  }
+</script>
 </body>
 
 </html>
